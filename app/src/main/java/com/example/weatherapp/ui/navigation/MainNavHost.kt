@@ -1,12 +1,12 @@
-package com.example.weatherapp.useri.navigation
+package com.example.weatherapp.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.weatherapp.useri.screens.home.HomeScreenView
-import com.example.weatherapp.useri.screens.weather.WeatherScreenView
+import com.example.weatherapp.ui.screens.details.DetailsScreenView
+import com.example.weatherapp.ui.screens.home.HomeScreenView
+import com.example.weatherapp.ui.screens.weather.WeatherScreenView
 
 @Composable
 fun MainNavHost() {
@@ -19,6 +19,7 @@ fun MainNavHost() {
     ) {
         composable("home") { HomeScreenView(navController) }
         composable("weather") { WeatherScreenView(navController) }
+        composable("details") { DetailsScreenView(navController) }
     }
 
 }
