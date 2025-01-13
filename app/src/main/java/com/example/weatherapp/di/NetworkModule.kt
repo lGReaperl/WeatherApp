@@ -1,17 +1,13 @@
-package com.example.weatherapp.data.network
+package com.example.weatherapp.di
 
-import com.example.weatherapp.data.model.WeatherResponse
+import com.example.weatherapp.data.remote.api.WeatherApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Query
 import javax.inject.Singleton
-
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -28,16 +24,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): WeatherApi {
+        return retrofit.create(WeatherApi::class.java)
     }
-}
-
-interface ApiService {
-    @GET("data/2.5/weather")
-    fun getWeather(
-        @Query("lat") lat: Double,
-        @Query("lon") lon: Double,
-        @Query("appid") apiKey: String
-    ): Call<WeatherResponse>
 }

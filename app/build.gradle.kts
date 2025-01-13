@@ -48,6 +48,12 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
+    // Room DB
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    kapt("androidx.room:room-compiler:2.6.1")
+
     // Остальные зависимости
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -70,6 +76,7 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
+
 }
 
 kapt {

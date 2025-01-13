@@ -37,7 +37,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.testing.TestNavHostController
 import com.example.weatherapp.R
-import com.example.weatherapp.data.model.WeatherResponse
+import com.example.weatherapp.domain.model.Weather
 
 @Composable
 fun WeatherScreenView(navController: NavController, viewModel: WeatherViewModel = hiltViewModel()) {
@@ -121,7 +121,7 @@ fun CustomBottomNavigation(modifier: Modifier, navController: NavController) {
 }
 
 @Composable
-fun BotFragment(modifier: Modifier, weather : WeatherResponse?){
+fun BotFragment(modifier: Modifier, weather: Weather?){
 
     ConstraintLayout( modifier = modifier
         .clip(RoundedCornerShape(30.dp))
