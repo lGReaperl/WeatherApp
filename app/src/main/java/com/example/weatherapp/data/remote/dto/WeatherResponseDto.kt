@@ -1,6 +1,6 @@
-package com.example.weatherapp.data.model
+package com.example.weatherapp.data.remote.dto
 
-data class WeatherResponse(
+data class WeatherResponseDto(
     val coord: Coord,
     val weather: List<Weather>,
     val base: String,
@@ -61,4 +61,3 @@ data class Sys(
     val sunrise: Long,
     val sunset: Long
 )
-
